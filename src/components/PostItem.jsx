@@ -1,17 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-function IssueItem({ issue }) {
+function PostItem({ content }) {
   return (
-    <IssueItemWrapper>
-      <IssueItemInfo>{issue}</IssueItemInfo>
-    </IssueItemWrapper>
+    <PostItemWrapper>
+      <PostItemInfo>{content}</PostItemInfo>
+    </PostItemWrapper>
   );
 }
 
-export default IssueItem;
-
-const IssueItemWrapper = styled.div`
+const PostItemWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,6 +20,8 @@ const IssueItemWrapper = styled.div`
   border-top: 2px solid black;
 `;
 
-const IssueItemInfo = styled.p`
+const PostItemInfo = styled.p`
   font-size: 2rem;
 `;
+
+export default PostItem;
