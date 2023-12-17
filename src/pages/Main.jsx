@@ -10,7 +10,7 @@ function Main() {
   const getPostList = () => {
     axios({
       method: "get",
-      url: `http://localhost:8082/select`,
+      url: `http://opensw-backend:8082/select`,
     })
       .then((response) => {
         setPostList(response.data.BoardList);
@@ -31,7 +31,7 @@ function Main() {
   const handleClickRegisterButton = () => {
     axios({
       method: "post",
-      url: `http://localhost:8082/insert`,
+      url: `http://opensw-backend:8082/insert`,
       data: {
         content: postText,
       },
