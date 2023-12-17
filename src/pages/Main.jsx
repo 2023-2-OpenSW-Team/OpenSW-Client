@@ -7,7 +7,7 @@ function Main() {
   const [postList, setPostList] = useState([]);
   const [postText, setPostText] = useState("");
 
-  useEffect(() => {
+  const getPostList = () => {
     axios({
       method: "get",
       url: `http://localhost:8082/select`,
@@ -18,6 +18,10 @@ function Main() {
       .catch(function (error) {
         console.log(error);
       });
+  };
+
+  useEffect(() => {
+    getPostList();
   }, []);
 
   const handleChangePostRegisterInput = (e) => {
@@ -33,6 +37,7 @@ function Main() {
       },
     })
       .then((response) => {
+        getPostList();
         console.log(response);
       })
       .catch(function (error) {
